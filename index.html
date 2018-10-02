@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Convert Suhu</title>
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <form>
+        <label>Convert suhu dari :</label>
+        <br>
+        <label>
+            <input type="radio" name="from" id="fromCelcius">
+            Celcius
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="from" id="fromFahrenheit">
+            Fahrenheit
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="from" id="fromKelvin">
+            Kelvin
+        </label>
+        
+        <br><br>
+        <label>Masukkan suhu : </label>
+        <input type="number" name="temp" id="temp">
+        <br><br>
+
+        <label>Convert suhu ke :</label>
+        <br>
+        <label>
+            <input type="radio" name="to" id="toCelcius">
+            Celcius
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="to" id="toFahrenheit">
+            Fahrenheit
+        </label>
+        <br>
+        <label>
+            <input type="radio" name="to" id="toKelvin">
+            Kelvin
+        </label>
+
+        <br><br>
+        <label>Hasil : </label>
+        <input type="number" name="result" id="result" readonly>
+        <br><br>
+
+        <input type="button" value="Convert" onclick="convertSuhu()"/>
+        
+    </form>
+</body>
+</html>
