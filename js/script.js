@@ -1,46 +1,36 @@
 function convertSuhu(){
-    var temp = Number(document.getElementById('temp').value)
-    var fromCelcius = document.getElementById('fromCelcius')
-    var fromFahrenheit = document.getElementById('fromFahrenheit')
-    var fromKelvin = document.getElementById('fromKelvin')
-    var toCelcius = document.getElementById('toCelcius')
-    var toFahrenheit = document.getElementById('toFahrenheit')
-    var toKelvin = document.getElementById('toKelvin')
+    var temp = Number(document.getElementById('temperature').value)
+    var from = document.getElementById('from').value
+    var to = document.getElementById('to').value
     var hasil
 
-    if (fromCelcius.checked) {
-        if (toCelcius.checked) {
+    if (from == 'celcius') {
+        if (to == 'celcius') {
             hasil = temp
-        }
-        else if (toFahrenheit.checked) {
+        } else if (to == 'fahrenheit') {
             hasil = (temp * 1.8) + 32
-        }
-        else {
+        } else if (to == 'kelvin') {
             hasil = temp + 273.15
         }
-    }
-    else if (fromFahrenheit.checked) {
-        if (toCelcius.checked) {
+    } else if (from == 'fahrenheit') {
+        if (to == 'celcius') {
             hasil = (temp - 32) / 1.8
-        }
-        else if (toFahrenheit.checked) {
+        } else if (to == 'fahrenheit') {
             hasil = temp
-        }
-        else {
+        } else if (to == 'kelvin') {
             hasil = (temp + 459.67) / 1.8
-        }        
-    }
-    else {
-        if (toCelcius.checked) {
+        }
+    } else if (from == 'kelvin') {
+        if (to == 'celcius') {
             hasil = temp - 273.15 
-        }
-        else if (toFahrenheit.checked) {
+        } else if (to == 'fahrenheit') {
             hasil = temp * 1.8 - 459.67 
-        }
-        else {
+        } else if (to == 'kelvin') {
             hasil = temp
         }
     }
 
+    document.getElementById('resultLabel').removeAttribute('hidden')
+    document.getElementById('result').removeAttribute('hidden')
     document.getElementById('result').value = hasil
 }

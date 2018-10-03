@@ -1,57 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Convert Suhu</title>
+    <title>Konversi Suhu</title>
     <script src="js/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 </head>
 <body>
-    <form>
-        <label>Convert suhu dari :</label>
-        <br>
-        <label>
-            <input type="radio" name="from" id="fromCelcius">
-            Celcius
-        </label>
-        <br>
-        <label>
-            <input type="radio" name="from" id="fromFahrenheit">
-            Fahrenheit
-        </label>
-        <br>
-        <label>
-            <input type="radio" name="from" id="fromKelvin">
-            Kelvin
-        </label>
-        
-        <br><br>
-        <label>Masukkan suhu : </label>
-        <input type="number" name="temp" id="temp">
-        <br><br>
+    <div class="container-fluid">
+        <div class="rounded bg-light m-5 p-5 position-fixed">
+            <h3 class="text-center">
+                Konversi Suhu
+            </h3>
+            
+            <hr>
 
-        <label>Convert suhu ke :</label>
-        <br>
-        <label>
-            <input type="radio" name="to" id="toCelcius">
-            Celcius
-        </label>
-        <br>
-        <label>
-            <input type="radio" name="to" id="toFahrenheit">
-            Fahrenheit
-        </label>
-        <br>
-        <label>
-            <input type="radio" name="to" id="toKelvin">
-            Kelvin
-        </label>
+            <form>
+                <div class="form-group">
+                    <label for="from">Konversi dari :</label>
+                    <select class="form-control" name="from" id="from">
+                        <option value="celcius">Celcius</option>
+                        <option value="fahrenheit">Fahrenheit</option>
+                        <option value="kelvin">Kelvin</option>
+                    </select>
+                </div>
 
-        <br><br>
-        <label>Hasil : </label>
-        <input type="number" name="result" id="result" readonly>
-        <br><br>
+                <div class="form-group">
+                    <label for="to">Konversi ke :</label>
+                    <select class="form-control" name="to" id="to">
+                        <option value="celcius">Celcius</option>
+                        <option value="fahrenheit">Fahrenheit</option>
+                        <option value="kelvin">Kelvin</option>
+                    </select>
+                </div>
 
-        <input type="button" value="Convert" onclick="convertSuhu()"/>
-        
-    </form>
+                <div class="form-group">
+                    <label for="temperature">Suhu :</label>
+                    <input type="number"
+                    class="form-control" name="temperature" id="temperature" placeholder="Masukkan Suhu">
+                </div>
+
+                <button type="button" class="btn btn-primary btn-block" onclick="convertSuhu()">Convert</button>
+                
+                <div class="form-group mt-3">
+                    <label for="result" id="resultLabel" hidden>Hasil konversi :</label>
+                    <input type="number"
+                        class="form-control" name="result" id="result" readonly hidden>
+                </div>                        
+            </form>
+        </div>
+    </div>
 </body>
 </html>
